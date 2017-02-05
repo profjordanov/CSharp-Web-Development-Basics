@@ -1,0 +1,18 @@
+#outerDiv{
+    border: 3px dotted blue;
+    width: 200px;
+}
+
+#middleDiv{
+    border: 3px dashed red
+}
+
+#innerDiv{
+    border: 3px solid green;
+    font-size: 25px;
+}
+
+div {
+    border-radius: 5px;
+    padding: 10px;
+}
