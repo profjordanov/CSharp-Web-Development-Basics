@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza More</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="/images/pizza_1.jpg" alt="Pizza">
+            </div>
+            <div class="item">
+                <img src="/images/pizza_2.jpg" alt="Pizza">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="navigation" class="navbar navbar-default">
+            <div class="navbar-header"><a class="navbar-brand" href="">PizzaMore</a></div>
+            <ul class="navbar-nav nav">
+                <li class="active"><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <form action="" method="POST">
+                <input type="button" id="languageBtn"  name="language" value="BG" onclick="change(this)" class="btn btn-primary navbar-btn">
+                <a class="btn btn-success navbar-btn" href="signin.exe">SignIn</a>
+                <a class="btn btn-warning navbar-btn" href="signup.exe">SignUp</a>
+                <a class="btn btn-info navbar-btn" href="menu.exe">Menu</a>
+            </form>
+        </div>
+        <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript">
+            function change(element) {
+                element.value = element.value == "EN" ? "BG" : "EN";
+            }
+        </script>
+</body>
+
+</html>

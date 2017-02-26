@@ -1,0 +1,20 @@
+body{
+    background: url("/images/pizza_1.jpg")
+}
+
+.jumbotron{
+    height: 300px;
+}
+
+#btns{
+    margin: 0 auto;
+    display: table;
+    padding: 5px;
+}
+form a{
+    margin-right: 4px;
+}
+form input {
+    margin-left: 3px; 
+}
+
