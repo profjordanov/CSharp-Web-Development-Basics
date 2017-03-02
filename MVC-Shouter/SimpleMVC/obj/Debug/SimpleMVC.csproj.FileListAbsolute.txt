@@ -1,0 +1,9 @@
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\Resources\Pages\404.html
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\Resources\Pages\500.html
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\SimpleMVC.dll
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\SimpleMVC.pdb
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\SimpleHttpServer.dll
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\bin\Debug\SimpleHttpServer.pdb
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\obj\Debug\SimpleMVC.csprojResolveAssemblyReference.cache
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\obj\Debug\SimpleMVC.dll
+D:\Software University\C# Web Development Basics\MVC + Persistence - Exercise\MVC-Shouter\SimpleMVC\obj\Debug\SimpleMVC.pdb
