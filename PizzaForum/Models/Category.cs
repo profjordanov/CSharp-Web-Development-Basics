@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace PizzaForum.Models
+﻿namespace PizzaForum.Models
 {
+    using System.Collections.Generic;
+
     public class Category
     {
         public Category()
@@ -14,5 +14,6 @@ namespace PizzaForum.Models
         public string Name { get; set; }
 
         public virtual ICollection<Topic> Topics { get; set; }
+        
     }
 }

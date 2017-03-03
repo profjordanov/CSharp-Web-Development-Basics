@@ -1,9 +1,8 @@
-﻿using System.IO;
-using System.Text;
-using SimpleMVC.Interfaces;
-
-namespace PizzaForum.Views.Categories
+﻿namespace PizzaForum.Views.Categories
 {
+    using System.IO;
+    using System.Text;
+    using SimpleMVC.Interfaces;
     public class New : IRenderable
     {
         public string Render()
@@ -19,6 +18,7 @@ namespace PizzaForum.Views.Categories
             builder.Append(navigation);
             builder.Append(newCategory);
             builder.Append(footer);
+
             return builder.ToString();
         }
     }

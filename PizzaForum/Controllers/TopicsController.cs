@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using PizzaForum.BindingModels;
+﻿using PizzaForum.BindingModels;
 using PizzaForum.Models;
 using PizzaForum.Services;
 using PizzaForum.Utilities;
@@ -7,12 +6,12 @@ using PizzaForum.ViewModels;
 using SimpleHttpServer.Models;
 using SimpleMVC.Attributes.Methods;
 using SimpleMVC.Controllers;
-using SimpleMVC.Interfaces;
 using SimpleMVC.Interfaces.Generic;
+using System.Collections.Generic;
 
 namespace PizzaForum.Controllers
 {
-    public class TopicsController : Controller
+    class TopicsController : Controller
     {
         private TopicsService service;
 
@@ -25,18 +24,19 @@ namespace PizzaForum.Controllers
         public IActionResult<IEnumerable<string>> New(HttpSession session, HttpResponse response)
         {
             User currentUser = AuthenticationManager.GetAuthenticatedUser(session.Id);
+
             if (currentUser == null)
             {
                 this.Redirect(response, "/home/topics");
                 return null;
             }
-            IEnumerable<string> categoryNames = service.GetCategoryNames();
+
+            IEnumerable<string> categoryNames = this.service.GetCategoryNames();
 
             return this.View(categoryNames);
         }
 
         [HttpPost]
-
         public void New(HttpSession session, HttpResponse response, NewTopicBindingModel bind)
         {
             User user = AuthenticationManager.GetAuthenticatedUser(session.Id);
@@ -46,12 +46,14 @@ namespace PizzaForum.Controllers
                 this.Redirect(response, "/home/topics");
                 return;
             }
-            if (!service.IsNewTopicValid(bind))
+
+            if (!this.service.IsNewTopicValid(bind))
             {
                 this.Redirect(response, "/topics/new");
                 return;
             }
-            service.AddNewTopic(bind, user);
+
+            this.service.AddNewTopic(bind, user);
 
             this.Redirect(response, "/home/topics");
         }
@@ -67,7 +69,7 @@ namespace PizzaForum.Controllers
                 return null;
             }
 
-            DetailsVM viewModel = service.GetDetailsVm(id);
+            DetailsVM viewModel = this.service.GetDetailsVm(id);
 
             return this.View(viewModel);
         }
@@ -83,9 +85,8 @@ namespace PizzaForum.Controllers
                 return;
             }
 
-            service.AddNewReply(bind, user);
+            this.service.AddNewReply(bind, user);
             this.Redirect(response, request.Url);
         }
-        
     }
 }

@@ -1,20 +1,16 @@
-using PizzaForum.Models;
-
 namespace PizzaForum.Data
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
+    using Models;
 
     public class PizzaForumContext : DbContext
     {
-      
         public PizzaForumContext()
             : base("PizzaForumContext")
         {
         }
 
-        public DbSet<Category>  Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public DbSet<Login> Logins { get; set; }
 
@@ -22,8 +18,7 @@ namespace PizzaForum.Data
 
         public DbSet<Topic> Topics { get; set; }
 
-        public DbSet<Replies> Replies { get; set; }
-
+        public DbSet<Reply> Replies { get; set; }
 
     }
 

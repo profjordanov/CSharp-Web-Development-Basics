@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
-namespace PizzaForum
+﻿namespace PizzaForum
 {
-    public static class ViewBag
+    using System.Collections.Generic;
+
+    static class ViewBag
     {
         public static Dictionary<string, dynamic> Bag = new Dictionary<string, dynamic>();
 

@@ -1,23 +1,26 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using PizzaForum.BindingModels;
-using PizzaForum.Models;
-using PizzaForum.ViewModels;
-using SimpleHttpServer.Models;
+﻿using AutoMapper;
 
 namespace PizzaForum.Services
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using BindingModels;
+    using Models;
+    using ViewModels;
+
     public class CategoriesService : Service
     {
         public AllViewModel GetAllViewModel(User activeUser)
         {
             AllViewModel view = new AllViewModel();
 
-            IEnumerable<AllCategoryViewModel> categories = this.Context.Categories.Select(category => new AllCategoryViewModel()
-            {
-                Id = category.Id,
-                CategoryName = category.Name
-            });
+            IEnumerable<AllCategoryViewModel> categories = this.Context.Categories.Entities
+                                        .Select(category => new AllCategoryViewModel()
+                                        {
+                                            Id = category.Id,
+                                            CategoryName = category.Name
+                                        });
+
             view.Categories = categories;
 
             return view;
@@ -29,15 +32,14 @@ namespace PizzaForum.Services
             {
                 return false;
             }
+
             return true;
         }
 
         public void AddNewCategory(NewCategoryBindingModel bind)
         {
-            this.Context.Categories.Add(new Category()
-            {
-                Name = bind.Name
-            });
+            Category category = Mapper.Map<NewCategoryBindingModel, Category>(bind);
+            this.Context.Categories.Add(category);
             this.Context.SaveChanges();
         }
 
@@ -47,25 +49,32 @@ namespace PizzaForum.Services
             this.Context.SaveChanges();
         }
 
-        public EditCategoryViewModel GetEditCategoryVM(int categoryId)
+        internal EditCategoryViewModel GetEditCategoryVM(int categoryId)
         {
-            Category category = Context.Categories.Find(categoryId);
-           return  new EditCategoryViewModel()
-           {
-               CategoryName = category.Name,
-               Id = categoryId
-           };
+            Category category = this.Context.Categories.Find(categoryId);
+            return new EditCategoryViewModel()
+            {
+                CategoryName = category.Name,
+                Id = categoryId
+            };
         }
 
-        public void EditCategoryEntity(EditCategoryBM bind)
+        internal void EditCategoryEntity(EditCategoryBM bind)
         {
-            Category category = Context.Categories.Find(bind.CategoryId);
+            Category category = this.Context.Categories.Find(bind.CategoryId);
             if (category != null)
             {
                 category.Name = bind.CategoryName;
             }
 
-            Context.SaveChanges();
+            this.Context.SaveChanges();
+        }
+
+        internal IEnumerable<TopicVM> GetCategoryTopicsVms(string categoryName)
+        {
+            return
+                Mapper.Map<IEnumerable<Topic>, IEnumerable<TopicVM>>(
+                    this.Context.Categories.FirstOrDefault(ct => ct.Name == categoryName).Topics);
         }
     }
 }

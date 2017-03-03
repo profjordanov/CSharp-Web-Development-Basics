@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace PizzaForum.Models
+﻿namespace PizzaForum.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Topic
     {
         public Topic()
         {
-            this.Replies = new HashSet<Replies>();
+            this.Replies = new HashSet<Reply>();
         }
 
         public int Id { get; set; }
@@ -22,6 +22,6 @@ namespace PizzaForum.Models
 
         public virtual Category Category { get; set; }
 
-        public virtual ICollection<Replies> Replies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
     }
 }

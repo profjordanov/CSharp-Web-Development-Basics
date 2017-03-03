@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace PizzaForum.Models
+﻿namespace PizzaForum.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class User
     {
         public User()
@@ -18,7 +18,7 @@ namespace PizzaForum.Models
         [Index(IsUnique = true)]
         public string Username { get; set; }
 
-        [Index("Email", IsUnique = true)]
+        [Index("Email",IsUnique = true)]
         [StringLength(450)]
         public string Email { get; set; }
 
@@ -28,8 +28,9 @@ namespace PizzaForum.Models
         public string Password { get; set; }
 
         public bool IsAdmin { get; set; }
-
+                                                 
         public virtual ICollection<Topic> Topics { get; set; }
+        
 
     }
 }

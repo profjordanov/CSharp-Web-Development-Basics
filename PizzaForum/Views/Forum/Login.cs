@@ -1,10 +1,10 @@
-﻿using System.IO;
-using System.Text;
-using SimpleMVC.Interfaces;
+﻿using System.Text;
 
 namespace PizzaForum.Views.Forum
 {
-    public class Login : IRenderable
+    using System.IO;
+    using SimpleMVC.Interfaces;
+    class Login : IRenderable
     {
         public string Render()
         {
@@ -18,6 +18,7 @@ namespace PizzaForum.Views.Forum
             builder.Append(navigation);
             builder.Append(login);
             builder.Append(footer);
+
             return builder.ToString();
         }
     }

@@ -1,10 +1,9 @@
-﻿using System.IO;
-using System.Text;
-using SimpleMVC.Interfaces;
-
-namespace PizzaForum.Views.Forum
+﻿namespace PizzaForum.Views.Forum
 {
-    public class Register : IRenderable
+    using System.IO;
+    using System.Text;
+    using SimpleMVC.Interfaces;
+    class Register : IRenderable
     {
         public string Render()
         {
@@ -18,6 +17,7 @@ namespace PizzaForum.Views.Forum
             builder.Append(navigation);
             builder.Append(register);
             builder.Append(footer);
+
             return builder.ToString();
         }
     }

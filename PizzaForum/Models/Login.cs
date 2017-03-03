@@ -9,6 +9,5 @@
         public string SessionId { get; set; }
 
         public bool IsActive { get; set; }
-
     }
 }

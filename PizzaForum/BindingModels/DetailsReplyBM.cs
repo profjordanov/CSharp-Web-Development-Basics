@@ -1,6 +1,6 @@
 ﻿namespace PizzaForum.BindingModels
 {
-    public class DetailsReplyBM
+    class DetailsReplyBM
     {
         public string Content { get; set; }
 

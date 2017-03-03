@@ -1,19 +1,19 @@
-﻿using SimpleMVC.Interfaces;
+﻿using PizzaForum.ViewModels;
+using SimpleMVC.Interfaces.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
-using PizzaForum.ViewModels;
 
-namespace PizzaForum.Views.Home
+namespace PizzaForum.Views.Categories
 {
-    public class Topics : SimpleMVC.Interfaces.Generic.IRenderable<IEnumerable<TopicVM>>
+    class Topics : IRenderable<IEnumerable<TopicVM>>
     {
         public IEnumerable<TopicVM> Model
         {
             get; set;
         }
 
-        string IRenderable.Render()
+        public string Render()
         {
             string header = File.ReadAllText(Constants.ContentPath + Constants.Header);
             string navigation;
@@ -30,15 +30,11 @@ namespace PizzaForum.Views.Home
             StringBuilder topicsCollection = new StringBuilder();
             topicsCollection.Append("<div class=\"container\">");
 
-            if (currentUser != null)
-            {
-                topicsCollection.Append("<a class=\"btn btn-success\" href=\"/topics/new\">New Topic</a>");
-            }
-
             foreach (var vm in this.Model)
             {
                 topicsCollection.Append(vm);
             }
+
             topicsCollection.Append("</div>");
 
             string footer = File.ReadAllText(Constants.ContentPath + Constants.Footer);
@@ -51,6 +47,5 @@ namespace PizzaForum.Views.Home
 
             return builder.ToString();
         }
-
     }
 }

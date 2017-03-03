@@ -1,19 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleHttpServer;
-using SimpleMVC;
+﻿using PizzaForum.ViewModels;
 
 namespace PizzaForum
 {
+    using System;
+    using SimpleHttpServer;
+    using SimpleMVC;
+    using AutoMapper;
+    using Models;
+    using BindingModels;
+
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            HttpServer server = new HttpServer(8081, RoutesTable.Routes);
+            ConfigureMapper();
+            HttpServer server = new HttpServer(8081, RouteTable.Routes);
             MvcEngine.Run(server, "PizzaForum");
+        }
+
+        private static void ConfigureMapper()
+        {
+            Mapper.Initialize(expression =>
+            {
+                expression.CreateMap<RegisterUserBindingModel, User>();
+                expression.CreateMap<NewCategoryBindingModel, Category>();
+                expression.CreateMap<Topic, TopicVM>();
+                expression.CreateMap<Topic, DetailTopicVM>();
+                expression.CreateMap<Reply, DetailsReplyVM>();
+                expression.CreateMap<Topic, ProfileTopicVM>();
+            });
         }
     }
 }

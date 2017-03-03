@@ -2,7 +2,7 @@
 
 namespace PizzaForum.ViewModels
 {
-    public class DetailsVM
+    class DetailsVM
     {
         public DetailTopicVM Topic { get; set; }
 

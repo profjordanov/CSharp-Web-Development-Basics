@@ -5,6 +5,6 @@
         private static PizzaForumContext context;
 
         public static PizzaForumContext Context 
-            => context ?? (context = new PizzaForumContext()); 
+            => context ?? (context = new PizzaForumContext());
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Net.Mime;
-
-namespace PizzaForum.ViewModels
+﻿namespace PizzaForum.ViewModels
 {
     public class EditCategoryViewModel
     {
@@ -10,7 +8,8 @@ namespace PizzaForum.ViewModels
 
         public override string ToString()
         {
-           string representation = $"<form method=\"POST\" action=\"/categories/edit\">\r\n        <label>Name</label>\r\n        <div class=\"form-group\">\r\n            <input type=\"hidden\" hidden=\"hidden\" class=\"form-control\" value=\"{this.Id}\" name=\"categoryId\" />\r\n            <input type=\"text\" class=\"form-control\" value=\"{this.CategoryName}\" name=\"categoryName\" />\r\n        </div>\r\n        <input type=\"submit\" class=\"btn btn-primary\" value=\"Edit Category\" />\r\n    </form>";
+            string representation = $"<form method=\"POST\" action=\"/categories/edit\">\r\n\t\t<label>Name</label>\r\n\t\t<div class=\"form-group\">\r\n\t\t\t<input type=\"hidden\" hidden=\"hidden\" class=\"form-control\" value=\"{this.Id}\" name=\"categoryId\">\r\n\t\t\t<input type=\"text\" class=\"form-control\" value=\"{this.CategoryName}\" name=\"categoryName\"/>\r\n\t\t</div>\r\n\t\t<input type=\"submit\" class=\"btn btn-primary\" value=\"Edit Category\"/>\r\n\t</form>";
+
             return representation;
         }
     }

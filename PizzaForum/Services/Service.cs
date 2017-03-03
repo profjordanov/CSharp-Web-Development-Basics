@@ -1,13 +1,16 @@
-﻿using PizzaForum.Data;
-
-namespace PizzaForum.Services
+﻿namespace PizzaForum.Services
 {
-    public class Service
+    using Data.Contracts;
+    using DepedencyContainer;
+    using Ninject;
+
+    public abstract class Service
     {
-        protected PizzaForumContext Context { get; }
         public Service()
         {
-            this.Context = Data.Data.Context;
+            this.Context = DependencyKernel.Kernel.Get<IUnitOfWork>();
         }
+
+        protected IUnitOfWork Context { get; }
     }
 }

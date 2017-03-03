@@ -1,19 +1,18 @@
-﻿using SimpleMVC.Interfaces;
+﻿using SimpleMVC.Interfaces.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
-using PizzaForum.ViewModels;
 
 namespace PizzaForum.Views.Home
 {
-    public class Topics : SimpleMVC.Interfaces.Generic.IRenderable<IEnumerable<TopicVM>>
+    class Categories : IRenderable<IEnumerable<string>>
     {
-        public IEnumerable<TopicVM> Model
+        public IEnumerable<string> Model
         {
             get; set;
         }
 
-        string IRenderable.Render()
+        public string Render()
         {
             string header = File.ReadAllText(Constants.ContentPath + Constants.Header);
             string navigation;
@@ -27,30 +26,25 @@ namespace PizzaForum.Views.Home
             {
                 navigation = File.ReadAllText(Constants.ContentPath + Constants.NavNotLogged);
             }
-            StringBuilder topicsCollection = new StringBuilder();
-            topicsCollection.Append("<div class=\"container\">");
 
-            if (currentUser != null)
+            StringBuilder categoriesCollection = new StringBuilder();
+            categoriesCollection.Append("<div class=\"container\">");
+            foreach (var item in this.Model)
             {
-                topicsCollection.Append("<a class=\"btn btn-success\" href=\"/topics/new\">New Topic</a>");
+                categoriesCollection.Append($"<a href=\"/categories/topics?CategoryName={item}\">{item}</a>");
+                categoriesCollection.Append("<br>");
             }
-
-            foreach (var vm in this.Model)
-            {
-                topicsCollection.Append(vm);
-            }
-            topicsCollection.Append("</div>");
+            categoriesCollection.Append("</div>");
 
             string footer = File.ReadAllText(Constants.ContentPath + Constants.Footer);
 
             StringBuilder builder = new StringBuilder();
             builder.Append(header);
             builder.Append(navigation);
-            builder.Append(topicsCollection);
+            builder.Append(categoriesCollection);
             builder.Append(footer);
 
             return builder.ToString();
         }
-
     }
 }

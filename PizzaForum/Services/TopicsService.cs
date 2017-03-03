@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using PizzaForum.BindingModels;
 using PizzaForum.Models;
 using PizzaForum.ViewModels;
 
 namespace PizzaForum.Services
 {
-    public class TopicsService : Service
+    class TopicsService : Service
     {
         public IEnumerable<string> GetCategoryNames()
         {
-            return Context.Categories.Select(ct => ct.Name);
+            return this.Context.Categories.Entities.Select(ct => ct.Name);
         }
 
-        public void AddNewTopic(NewTopicBindingModel bind, User user)
+        internal void AddNewTopic(NewTopicBindingModel bind, User user)
         {
-            Category category = Context.Categories.FirstOrDefault(cat => cat.Name == bind.Category);
+            Category category = this.Context.Categories.FirstOrDefault(cat => cat.Name == bind.Category);
+
             Topic topic = new Topic()
             {
                 Author = user,
@@ -26,11 +28,11 @@ namespace PizzaForum.Services
                 Category = category
             };
 
-            Context.Topics.Add(topic);
-            Context.SaveChanges();
+            this.Context.Topics.Add(topic);
+            this.Context.SaveChanges();
         }
 
-        public bool IsNewTopicValid(NewTopicBindingModel bind)
+        internal bool IsNewTopicValid(NewTopicBindingModel bind)
         {
             if (bind.Title.Length > 30)
             {
@@ -45,24 +47,12 @@ namespace PizzaForum.Services
             return true;
         }
 
-        public DetailsVM GetDetailsVm(int id)
+        internal DetailsVM GetDetailsVm(int id)
         {
-            Topic topic = Context.Topics.Find(id);
-            DetailTopicVM topicVm = new DetailTopicVM()
-            {
-                Title = topic.Title,
-                AuthorName = topic.Author.Username,
-                Content = topic.Content,
-                PublicDate = topic.PublishDate
-            };
+            Topic topic = this.Context.Topics.Find(id);
+            DetailTopicVM topicVm = Mapper.Map<Topic, DetailTopicVM>(topic);
 
-            IEnumerable<DetailsReplyVM> replies = topic.Replies.Select(repl => new DetailsReplyVM()
-            {
-                AuthorName = repl.Author.Username,
-                Content = repl.Content,
-                ImageUrl = repl.ImageUrl,
-                PublishDate = repl.PublishDate
-            });
+            IEnumerable<DetailsReplyVM> replies = Mapper.Map<IEnumerable<Reply>, IEnumerable<DetailsReplyVM>>(topic.Replies);
 
             return new DetailsVM
             {
@@ -71,10 +61,10 @@ namespace PizzaForum.Services
             };
         }
 
-        public void AddNewReply(DetailsReplyBM bind, User user)
+        internal void AddNewReply(DetailsReplyBM bind, User user)
         {
-            Topic topic = Context.Topics.FirstOrDefault(tp => tp.Title == bind.TopicTitle);
-            Context.Replies.Add(new Replies()
+            Topic topic = this.Context.Topics.FirstOrDefault(tp => tp.Title == bind.TopicTitle);
+            this.Context.Replies.Add(new Reply
             {
                 PublishDate = DateTime.Now,
                 ImageUrl = bind.ImageUrl,
@@ -82,7 +72,7 @@ namespace PizzaForum.Services
                 Content = bind.Content,
                 Topic = topic
             });
-            Context.SaveChanges();
+            this.Context.SaveChanges();
         }
     }
 }

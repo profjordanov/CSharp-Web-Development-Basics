@@ -1,21 +1,21 @@
-﻿using SimpleMVC.Interfaces;
+﻿using PizzaForum.ViewModels;
+using SimpleMVC.Interfaces.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
-using PizzaForum.ViewModels;
 
-namespace PizzaForum.Views.Home
+namespace PizzaForum.Views.Forum
 {
-    public class Topics : SimpleMVC.Interfaces.Generic.IRenderable<IEnumerable<TopicVM>>
+    class Profile : IRenderable<ProfileVM>
     {
-        public IEnumerable<TopicVM> Model
+        public ProfileVM Model
         {
             get; set;
         }
 
-        string IRenderable.Render()
+        public string Render()
         {
             string header = File.ReadAllText(Constants.ContentPath + Constants.Header);
+
             string navigation;
             string currentUser = ViewBag.GetUserName();
             if (currentUser != null)
@@ -27,30 +27,33 @@ namespace PizzaForum.Views.Home
             {
                 navigation = File.ReadAllText(Constants.ContentPath + Constants.NavNotLogged);
             }
-            StringBuilder topicsCollection = new StringBuilder();
-            topicsCollection.Append("<div class=\"container\">");
 
-            if (currentUser != null)
+            string profile = File.ReadAllText(Constants.ContentPath + "profile-mine.html");
+            
+
+            StringBuilder topics = new StringBuilder();
+            foreach (var topic in this.Model.Topics)
             {
-                topicsCollection.Append("<a class=\"btn btn-success\" href=\"/topics/new\">New Topic</a>");
+                topics.Append("<tr>");
+                topics.Append(topic.ToString());
+                if (this.Model.ClickeUserId == this.Model.CurrentUserId)
+                {
+                    topics.Append(topic.GetDeleteButton());
+                }
+
+                topics.Append("</tr>");
             }
 
-            foreach (var vm in this.Model)
-            {
-                topicsCollection.Append(vm);
-            }
-            topicsCollection.Append("</div>");
-
+            profile = string.Format(profile, this.Model.ClickedUsername, topics);
             string footer = File.ReadAllText(Constants.ContentPath + Constants.Footer);
 
             StringBuilder builder = new StringBuilder();
             builder.Append(header);
             builder.Append(navigation);
-            builder.Append(topicsCollection);
+            builder.Append(profile);
             builder.Append(footer);
 
             return builder.ToString();
         }
-
     }
 }

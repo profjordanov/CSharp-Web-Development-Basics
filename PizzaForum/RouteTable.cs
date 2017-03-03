@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using SimpleHttpServer.Enums;
-using SimpleHttpServer.Models;
-using SimpleMVC.Routers;
-
-namespace PizzaForum
+﻿namespace PizzaForum
 {
-        public static class RoutesTable
+    using System.IO;
+    using SimpleHttpServer.Enums;
+    using SimpleHttpServer.Models;
+    using SimpleMVC.Routers;
+
+    public static class RouteTable
+    {
+        public static Route[] Routes
         {
-            public static IEnumerable<Route> Routes
+            get
             {
-                get
+                return new Route[]
                 {
-                    return new Route[]
-                    {
+
                      new Route()
                     {
                         Name = "Favicon",
@@ -24,7 +24,7 @@ namespace PizzaForum
                             var response = new HttpResponse()
                             {
                                 StatusCode = ResponseStatusCode.Ok,
-                                Content = File.ReadAllBytes(@"../../content/images/shout.ico")
+                                Content = File.ReadAllBytes(@"../../content/images/forum.ico")
                             };
                             response.Header.ContentType = "image/*";
                             response.Header.ContentLength = response.Content.Length.ToString();
@@ -80,9 +80,9 @@ namespace PizzaForum
                             return response;
                         }
                     },
-                     new Route()
+                      new Route()
                     {
-                        Name = "CSS",
+                        Name = " CSS",
                         Method = RequestMethod.GET,
                         UrlRegex = "/css/style.css$",
                         Callable = (request) =>
@@ -103,7 +103,6 @@ namespace PizzaForum
                         UrlRegex = "/images/(.)$",
                         Callable = (request) =>
                         {
-                            //string imageName = request.Url.Substring(request.Url.LastIndexOf("/") + 1);
                             var response = new HttpResponse()
                             {
                                 StatusCode = ResponseStatusCode.Ok,
@@ -129,8 +128,8 @@ namespace PizzaForum
                         UrlRegex = @"^/(.+)/(.+)$",
                         Callable = new ControllerRouter().Handle
                     },
-                    };
-                }
+                };
             }
         }
     }
+}
