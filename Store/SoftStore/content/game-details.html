@@ -1,0 +1,33 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <h1 class="display-3">{0}</h1>
+                <br/>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{1}" frameborder="0"
+                        allowfullscreen></iframe>
+
+                <br/>
+                <br/>
+
+                <p>{2}</p>
+
+                <p><strong>Price</strong> - {3}&euro;</p>
+                <p><strong>Size</strong> - {4} GB</p>
+                <p><strong>Release Date</strong> - {5}</p>
+
+                <a class="btn btn-outline-primary" name="back" href="/home/index">Back</a>
+                <form action="/home/buy" method="post">
+                    <input type="number" name="id" value="{6}" hidden="hidden"/>
+                    <br/>
+                    <input type="submit" class="btn btn-success" value="Buy" />
+                </form>
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+    </div>
+</main>
