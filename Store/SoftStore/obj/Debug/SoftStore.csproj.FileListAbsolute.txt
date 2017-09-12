@@ -21,3 +21,6 @@ C:\Users\Jordan\Desktop\SoftStore (1)\SoftStore\obj\Debug\SoftStore.pdb
 C:\Users\Jordan\Desktop\Store\SoftStore\bin\Debug\SoftStore.exe.config
 C:\Users\Jordan\Desktop\Store\SoftStore\obj\Debug\SoftStore.exe
 C:\Users\Jordan\Desktop\Store\SoftStore\obj\Debug\SoftStore.pdb
+D:\Software University\C# Web Development Basics\CSharp-Web-Development-Basics\Store\SoftStore\bin\Debug\SoftStore.exe.config
+D:\Software University\C# Web Development Basics\CSharp-Web-Development-Basics\Store\SoftStore\obj\Debug\SoftStore.exe
+D:\Software University\C# Web Development Basics\CSharp-Web-Development-Basics\Store\SoftStore\obj\Debug\SoftStore.pdb
