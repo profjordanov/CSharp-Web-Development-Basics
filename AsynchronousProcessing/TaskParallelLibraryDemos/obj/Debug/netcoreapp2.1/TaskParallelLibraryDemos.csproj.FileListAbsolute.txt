@@ -1,0 +1,11 @@
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\bin\Debug\netcoreapp2.1\TaskParallelLibraryDemos.deps.json
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\bin\Debug\netcoreapp2.1\TaskParallelLibraryDemos.runtimeconfig.json
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\bin\Debug\netcoreapp2.1\TaskParallelLibraryDemos.runtimeconfig.dev.json
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\bin\Debug\netcoreapp2.1\TaskParallelLibraryDemos.dll
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\bin\Debug\netcoreapp2.1\TaskParallelLibraryDemos.pdb
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.csproj.CoreCompileInputs.cache
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.AssemblyInfoInputs.cache
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.AssemblyInfo.cs
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.dll
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.pdb
+C:\Users\yoryordanov\source\repos\AsynchronousProcessing\TaskParallelLibraryDemos\obj\Debug\netcoreapp2.1\TaskParallelLibraryDemos.csprojAssemblyReference.cache
