@@ -1,8 +1,7 @@
 ﻿namespace PizzaForum.ViewModels
 {
-    public class LoggedInUserViewModel
+    public class LoggedInuserViewModel
     {
         public string Username { get; set; }
-        
     }
 }
