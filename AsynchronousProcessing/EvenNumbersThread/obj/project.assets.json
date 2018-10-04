@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\RaceConditionDemo\\RaceConditionDemo.csproj",
-      "projectName": "RaceConditionDemo",
-      "projectPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\RaceConditionDemo\\RaceConditionDemo.csproj",
+      "projectUniqueName": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\EvenNumbersThread\\EvenNumbersThread.csproj",
+      "projectName": "EvenNumbersThread",
+      "projectPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\EvenNumbersThread\\EvenNumbersThread.csproj",
       "packagesPath": "C:\\Users\\yoryordanov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\RaceConditionDemo\\obj\\",
+      "outputPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\EvenNumbersThread\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

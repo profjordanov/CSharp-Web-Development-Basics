@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceConditionDemo", "RaceConditionDemo\RaceConditionDemo.csproj", "{6FFE2B69-87DE-4785-9F05-5E0FE810A51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaceConditionDemo", "RaceConditionDemo\RaceConditionDemo.csproj", "{6FFE2B69-87DE-4785-9F05-5E0FE810A51E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskParallelLibraryDemos", "TaskParallelLibraryDemos\TaskParallelLibraryDemos.csproj", "{551AB3A3-DC06-410D-8D79-4403C6FE7AFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskParallelLibraryDemos", "TaskParallelLibraryDemos\TaskParallelLibraryDemos.csproj", "{551AB3A3-DC06-410D-8D79-4403C6FE7AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenNumbersThread", "EvenNumbersThread\EvenNumbersThread.csproj", "{56C230CD-36C3-4A64-9B29-67D3A6B5E97F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliceFile", "SliceFile\SliceFile.csproj", "{D2AB7C2B-C3F7-4DCF-8AD4-295628EA35A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{551AB3A3-DC06-410D-8D79-4403C6FE7AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{551AB3A3-DC06-410D-8D79-4403C6FE7AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{551AB3A3-DC06-410D-8D79-4403C6FE7AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C230CD-36C3-4A64-9B29-67D3A6B5E97F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C230CD-36C3-4A64-9B29-67D3A6B5E97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C230CD-36C3-4A64-9B29-67D3A6B5E97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C230CD-36C3-4A64-9B29-67D3A6B5E97F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AB7C2B-C3F7-4DCF-8AD4-295628EA35A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AB7C2B-C3F7-4DCF-8AD4-295628EA35A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AB7C2B-C3F7-4DCF-8AD4-295628EA35A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AB7C2B-C3F7-4DCF-8AD4-295628EA35A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

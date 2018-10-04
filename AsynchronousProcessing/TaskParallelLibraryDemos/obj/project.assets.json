@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yoryordanov\\source\\repos\\AsynchronousProcessing\\TaskParallelLibraryDemos\\TaskParallelLibraryDemos.csproj",
+      "projectUniqueName": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\TaskParallelLibraryDemos\\TaskParallelLibraryDemos.csproj",
       "projectName": "TaskParallelLibraryDemos",
-      "projectPath": "C:\\Users\\yoryordanov\\source\\repos\\AsynchronousProcessing\\TaskParallelLibraryDemos\\TaskParallelLibraryDemos.csproj",
+      "projectPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\TaskParallelLibraryDemos\\TaskParallelLibraryDemos.csproj",
       "packagesPath": "C:\\Users\\yoryordanov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yoryordanov\\source\\repos\\AsynchronousProcessing\\TaskParallelLibraryDemos\\obj\\",
+      "outputPath": "C:\\Users\\yoryordanov\\Documents\\GitHub\\CSharp-Web-Development-Basics\\AsynchronousProcessing\\TaskParallelLibraryDemos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
