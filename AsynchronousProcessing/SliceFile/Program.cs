@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SliceFile
@@ -14,6 +15,7 @@ namespace SliceFile
 			string destinationPath = Console.ReadLine();
 			Console.Write("Pieces count: ");
 			int pieces = int.Parse(Console.ReadLine());
+			Console.WriteLine($"Working on Thread #{Thread.CurrentThread.ManagedThreadId}.");
 
 			Task.Run(() =>
 			{
@@ -54,6 +56,7 @@ namespace SliceFile
 				long bufferLength = (source.Length / parts) + 1;
 
 				Console.WriteLine("Slicing started...");
+				Console.WriteLine($"Working on Thread #{Thread.CurrentThread.ManagedThreadId}.");
 
 				for(int currentPart = 1; currentPart <= parts; currentPart++)
 				{
