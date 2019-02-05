@@ -1,0 +1,1 @@
+- Data parallelism is focused on processing data; task parallelism is just about doing work.
