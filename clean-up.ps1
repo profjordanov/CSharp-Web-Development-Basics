@@ -1,0 +1,1 @@
+Get-ChildItem .\ -include packages -Recurse | foreach ($_) { remove-item $_.fullname -Force -Recurse }
